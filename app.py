@@ -12,41 +12,29 @@ class CalendarApp:
         self.setup_ui()
 
     def setup_ui(self):
+        style = ttk.Style()        
+        style.configure('TButton', foreground='black', background='blue')
+        style.configure('TLabel', foreground='red')
+        style.configure('TEntry', background='light gray')
+        style.configure('TFrame', background='white')
+
         self.calendar = Calendar(self.root, date_pattern="dd/MM/yyyy")
-
-        # Змінити колір фону віджета tkcalendar
         self.calendar.calevent_bg = "light blue"
+        self.calendar.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
 
-        self.calendar.pack(padx=10, pady=10)
+        self.note_entry = ttk.Entry(self.root, style='TEntry')
+        self.note_entry.grid(row=2, column=0, pady=10, columnspan=2)
 
-        self.selected_date = tk.StringVar()
-        self.date_label = tk.Label(self.root, textvariable=self.selected_date)
+        ttk.Button(self.root, text="Додати замітку", command=self.add_note, style='TButton').grid(row=3, column=0, padx=10, pady=10)
+        ttk.Button(self.root, text="Переглянути замітки", command=self.view_notes, style='TButton').grid(row=3, column=1, padx=10, pady=10)
 
-        # Змінити колір тексту для мітки з датою
-        self.date_label.config(fg="red")
-
-        self.date_label.pack(pady=10)
-
-        self.note_entry = tk.Entry(self.root)
-        self.note_entry.pack(pady=10)
-        self.add_button = tk.Button(self.root, text="Додати замітку", command=self.add_note)
-
-        # Змінити колір фону і тексту для кнопки "Додати замітку"
-        self.add_button.config(bg="green", fg="white")
-
-        self.add_button.pack()
-
-        self.view_button = tk.Button(self.root, text="Переглянути замітки", command=self.view_notes)
-
-        # Змінити колір фону і тексту для кнопки "Переглянути замітки"
-        self.view_button.config(bg="blue", fg="white")
-
-        self.view_button.pack()
+        self.date_label = ttk.Label(self.root, text="", style='TLabel')
+        self.date_label.grid(row=1, column=0, pady=10)
 
         self.calendar.bind("<<DateSelected>>", self.on_date_selected)
 
     def on_date_selected(self, event):
-        self.selected_date.set(self.calendar.get_date())
+        self.date_label.config(text=self.calendar.get_date())
 
     def add_note(self):
         selected_date_str = self.calendar.get_date()

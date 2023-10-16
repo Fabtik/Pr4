@@ -1,4 +1,4 @@
-('C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 Pract\\build\\main\\main.exe',
+('C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 Pract\\build\\v3\\v3.exe',
  True,
  False,
  True,
@@ -30,31 +30,31 @@
  None,
  None,
  None,
- 'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 Pract\\build\\main\\main.pkg',
+ 'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 Pract\\build\\v3\\v3.pkg',
  [('pyi-contents-directory _internal', '', 'OPTION'),
   ('PYZ-00.pyz',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
-   'Pract\\build\\main\\PYZ-00.pyz',
+   'Pract\\build\\v3\\PYZ-00.pyz',
    'PYZ'),
   ('struct',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
-   'Pract\\build\\main\\localpycs\\struct.pyc',
+   'Pract\\build\\v3\\localpycs\\struct.pyc',
    'PYMODULE'),
   ('pyimod01_archive',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
-   'Pract\\build\\main\\localpycs\\pyimod01_archive.pyc',
+   'Pract\\build\\v3\\localpycs\\pyimod01_archive.pyc',
    'PYMODULE'),
   ('pyimod02_importers',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
-   'Pract\\build\\main\\localpycs\\pyimod02_importers.pyc',
+   'Pract\\build\\v3\\localpycs\\pyimod02_importers.pyc',
    'PYMODULE'),
   ('pyimod03_ctypes',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
-   'Pract\\build\\main\\localpycs\\pyimod03_ctypes.pyc',
+   'Pract\\build\\v3\\localpycs\\pyimod03_ctypes.pyc',
    'PYMODULE'),
   ('pyimod04_pywin32',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
-   'Pract\\build\\main\\localpycs\\pyimod04_pywin32.pyc',
+   'Pract\\build\\v3\\localpycs\\pyimod04_pywin32.pyc',
    'PYMODULE'),
   ('pyiboot01_bootstrap',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
@@ -74,7 +74,7 @@
  [],
  False,
  False,
- 1697495806,
+ 1697497398,
  [('run.exe',
    'C:\\Users\\nikdo\\Desktop\\Конструювання ПЗ\\4 '
    'Pract\\env\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
