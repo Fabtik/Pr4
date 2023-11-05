@@ -3,26 +3,30 @@ import json
 class CalendarDatabase:
     def __init__(self, filename):
         self.filename = filename
-        self.notes = {}
-        self.load_notes()
+        self.data = self.load_from_file()
 
-    def add_note(self, date, note):
-        if date in self.notes:
-            self.notes[date].append(note)
-        else:
-            self.notes[date] = [note]
-        self.save_notes()
-
-    def get_notes(self, date):
-        return self.notes.get(date, [])
-
-    def save_notes(self):
-        with open(self.filename, 'w') as file:
-            json.dump(self.notes, file)
-
-    def load_notes(self):
+    def load_from_file(self):
         try:
             with open(self.filename, 'r') as file:
-                self.notes = json.load(file)
+                return json.load(file)
         except FileNotFoundError:
-            self.notes = {}
+            return {}
+
+    def save_to_file(self):
+        with open(self.filename, 'w') as file:
+            json.dump(self.data, file, indent=4)
+
+    def add_note(self, date, note):
+        if date in self.data:
+            self.data[date].append(note)
+        else:
+            self.data[date] = [note]
+        self.save_to_file()
+
+    def get_notes(self, date):
+        return self.data.get(date, [])
+
+    def delete_notes(self, date):
+        if date in self.data:
+            del self.data[date]
+            self.save_to_file()
