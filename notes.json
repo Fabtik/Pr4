@@ -5,9 +5,57 @@
         "\u0430\u0430"
     ],
     "21/11/2023": [
-        "asdsadsad"
+        "asdsadsad",
+        {
+            "note": "\u0444\u044b\u0432\u044b\u0444\u0432",
+            "important": false
+        },
+        {
+            "note": "\u0444\u044b\u0432\u044b\u0444",
+            "important": true
+        }
     ],
     "08/11/2023": [
-        "\u0444\u044b\u0432"
+        "\u0444\u044b\u0432",
+        {
+            "note": "\u0444\u044b\u0432\u0444\u044b\u0432",
+            "important": true
+        }
+    ],
+    "23/11/2023": [
+        {
+            "note": "\u044b\u0444\u0432\u0444\u044b\u0432",
+            "important": false
+        }
+    ],
+    "30/11/2023": [
+        {
+            "note": "\u0444\u044b\u0432\u044b\u0444\u0432",
+            "important": false
+        }
+    ],
+    "24/11/2023": [
+        {
+            "note": "\u0444\u044b\u0432\u044b\u0444\u0432",
+            "important": false
+        }
+    ],
+    "01/12/2023": [
+        {
+            "note": "\u0444\u044b\u0432\u044b\u0444\u0432",
+            "important": false
+        }
+    ],
+    "13/12/2023": [
+        {
+            "note": "\u0444\u044b\u0432\u0444\u044b\u0432",
+            "important": false
+        }
+    ],
+    "09/11/2023": [
+        {
+            "note": "\u0444\u044b\u0432\u0444\u044b\u0432",
+            "important": true
+        }
     ]
 }

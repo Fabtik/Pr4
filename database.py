@@ -16,15 +16,16 @@ class CalendarDatabase:
         with open(self.filename, 'w') as file:
             json.dump(self.data, file, indent=4)
 
-    def add_note(self, date, note):
+    def add_note(self, date, note, important=False):
         if date in self.data:
-            self.data[date].append(note)
+            self.data[date].append({"note": note, "important": important})
         else:
-            self.data[date] = [note]
+            self.data[date] = [{"note": note, "important": important}]
         self.save_to_file()
 
     def get_notes(self, date):
-        return self.data.get(date, [])
+        notes = self.data.get(date, [])
+        return [(note["note"], note.get("important", False)) for note in notes]
 
     def delete_notes(self, date):
         if date in self.data:

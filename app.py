@@ -7,13 +7,13 @@ class CalendarApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Графічний календар з замітками")
-        self.db = CalendarDatabase("notes.json")  # Вкажіть ім'я файлу бази даних
+        self.db = CalendarDatabase("notes.json")
 
         self.setup_ui()
 
     def setup_ui(self):
         style = ttk.Style()
-        style.configure('TButton', foreground='black', background='blue')
+        style.configure('TButton', foreground='black', background='red')  # Установите красный цвет фона для кнопок
         style.configure('TLabel', foreground='red')
         style.configure('TEntry', background='light gray')
         style.configure('TFrame', background='white')
