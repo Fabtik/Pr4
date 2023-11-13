@@ -12,11 +12,7 @@ class CalendarApp:
         self.setup_ui()
 
     def setup_ui(self):
-        style = ttk.Style()
-        style.configure('TButton', foreground='black', background='red')  # Установите красный цвет фона для кнопок
-        style.configure('TLabel', foreground='red')
-        style.configure('TEntry', background='light gray')
-        style.configure('TFrame', background='white')
+        self.setup_styles()
 
         self.calendar = Calendar(self.root, date_pattern="dd/MM/yyyy")
         self.calendar.calevent_bg = "light blue"
@@ -34,6 +30,13 @@ class CalendarApp:
 
         self.calendar.bind("<<DateSelected>>", self.on_date_selected)
 
+    def setup_styles(self):
+        style = ttk.Style()
+        style.configure('TButton', foreground='black', background='red')  # Установите красный цвет фона для кнопок
+        style.configure('TLabel', foreground='red')
+        style.configure('TEntry', background='light gray')
+        style.configure('TFrame', background='white')
+
     def on_date_selected(self, event):
         self.date_label.config(text=self.calendar.get_date())
 
@@ -50,12 +53,7 @@ class CalendarApp:
     def view_notes(self):
         selected_date_str = self.calendar.get_date()
         notes = self.db.get_notes(selected_date_str)
-        if notes:
-            note_list = "\n".join(notes)
-            message = f"Замітки для {selected_date_str}:\n{note_list}"
-            messagebox.showinfo("Замітки", message)
-        else:
-            messagebox.showinfo("Замітки", f"Заміток для {selected_date_str} немає.")
+        self.show_notes_message(selected_date_str, notes)
 
     def delete_notes(self):
         selected_date_str = self.calendar.get_date()
@@ -63,6 +61,15 @@ class CalendarApp:
         if response:
             self.db.delete_notes(selected_date_str)
             messagebox.showinfo("Успішно", f"Замітки для {selected_date_str} були видалені.")
+
+    def show_notes_message(self, selected_date_str, notes):
+        if notes:
+            note_list = "\n".join(notes)
+            message = f"Замітки для {selected_date_str}:\n{note_list}"
+        else:
+            message = f"Заміток для {selected_date_str} немає."
+
+        messagebox.showinfo("Замітки", message)
 
 if __name__ == "__main__":
     root = tk.Tk()
