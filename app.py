@@ -18,19 +18,21 @@ class CalendarApp:
         style.configure('TEntry', background='light gray')
         style.configure('TFrame', background='white')
 
+        ttk.Frame(self.root, style='TFrame').grid(row=0, column=0, padx=10, pady=10, rowspan=5, columnspan=3)
+
         self.calendar = Calendar(self.root, date_pattern="dd/MM/yyyy")
         self.calendar.calevent_bg = "light blue"
-        self.calendar.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
+        self.calendar.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
         self.note_entry = ttk.Entry(self.root, style='TEntry')
-        self.note_entry.grid(row=2, column=0, pady=10, columnspan=2)
+        self.note_entry.grid(row=1, column=0, pady=10, columnspan=3)
 
-        ttk.Button(self.root, text="Додати замітку", command=self.add_note, style='TButton').grid(row=3, column=0, padx=10, pady=10)
-        ttk.Button(self.root, text="Переглянути замітки", command=self.view_notes, style='TButton').grid(row=3, column=1, padx=10, pady=10)
-        ttk.Button(self.root, text="Видалити замітки", command=self.delete_notes, style='TButton').grid(row=4, column=0, padx=10, pady=10)
+        ttk.Button(self.root, text="Додати замітку", command=self.add_note, style='TButton').grid(row=2, column=0, padx=10, pady=10)
+        ttk.Button(self.root, text="Переглянути замітки", command=self.view_notes, style='TButton').grid(row=2, column=1, padx=10, pady=10)
+        ttk.Button(self.root, text="Видалити замітки", command=self.delete_notes, style='TButton').grid(row=3, column=0, columnspan=2, pady=10)
 
         self.date_label = ttk.Label(self.root, text="", style='TLabel')
-        self.date_label.grid(row=1, column=0, pady=10)
+        self.date_label.grid(row=4, column=0, pady=10, columnspan=3)
 
         self.calendar.bind("<<DateSelected>>", self.on_date_selected)
 
